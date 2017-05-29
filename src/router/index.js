@@ -5,6 +5,8 @@ import Schedule from '../components/schedule.vue';
 import Space from '../components/space.vue';
 import Newsletter from '../components/newsletter.vue';
 import Contact from '../components/contact.vue';
+import Event from '../components/event.vue';
+import p404 from '../components/p404.vue';
 
 Vue.use(Router);
 
@@ -36,5 +38,15 @@ export default new Router({
             name: 'contact',
             component: Contact,
         },
+        {
+            path: '/event/:id/:slug',
+            name: 'event',
+            component: Event
+        },
+        {
+            path: '*',
+            name: 'p404',
+            component: p404
+        }
     ],
 });
