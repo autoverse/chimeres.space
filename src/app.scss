@@ -120,7 +120,7 @@ a {
     .events-group {
 
         .card {
-            max-width: 300px;
+            max-width: 85%;
             display: inline-block;
             margin: 20px;
             transition: border-color .25s;
@@ -210,5 +210,22 @@ a {
         text-indent: -9999px;
         width: 32px;
         height: 32px;
+    }
+}
+
+@media all and (max-width: 575px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .navbar {
+
+        .navbar-brand {
+
+            img {
+                width: 180px;
+            }
+        }
     }
 }
