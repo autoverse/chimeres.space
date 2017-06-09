@@ -10,16 +10,18 @@
       </div>
       <div class="col-sm-8">
         <h4>{{ event.title }}</h4>
-        <div>
-          {{ event.description }}
-        </div>
+        <div v-html="event.description"></div>
         <div>
           <i class="fa fa-calendar-o" aria-hidden="true"></i>
-          <span class="date">{{ event.starts }}</span>
+          <span class="date">{{ event.starts | moment }}</span>
         </div>
-        <div v-if="event.link">
+        <div class="link" v-if="event.link">
           <i class="fa fa-link" aria-hidden="true"></i>
           <a :href="event.link">περισσότερα</a>
+        </div>
+        <div class="link" v-if="event.fb_link">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+          <a :href="event.fb_link">fb event</a>
         </div>
       </div>
     </div>
@@ -28,6 +30,7 @@
 
 <script>
   import Api from '../api';
+  import moment from 'moment';
 
   export default {
     name: 'event',
@@ -35,6 +38,7 @@
     data () {
       return {
         event: [],
+        error: false,
         loading: true
       }
     },
@@ -45,22 +49,29 @@
         this.event = response.data;
       }, error => {
         this.loading = false;
-        console.error(error);
+        this.error = true;
       });
+    },
+
+    filters: {
+      moment: function (date) {
+        moment.locale('el');
+        return moment(date).format('dddd, DD.MM HH:mm');
+      }
     }
   };
 </script>
 
 <style lang="scss">
   .event {
+    margin-top: 20px;
+
+    div {
       margin-top: 20px;
 
-      div {
-        margin-top: 20px;
-
-        .date {
-          margin-left: 5px;
-        }
+      .date {
+        margin-left: 5px;
       }
     }
-  </style>
+  }
+</style>

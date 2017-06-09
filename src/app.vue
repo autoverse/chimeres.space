@@ -10,16 +10,10 @@
        <div class="collapse navbar-collapse" id="navbarMain">
          <ul class="navbar-nav mr-auto">
            <li class="nav-item">
-             <router-link :to="{ name: 'schedule'}" class="nav-link">Πρόγραμμα</router-link>
-           </li>
-           <li class="nav-item">
              <router-link :to="{ name: 'space'}" class="nav-link">Χώρος</router-link>
            </li>
            <li class="nav-item">
              <router-link :to="{ name: 'newsletter'}" class="nav-link">Newsletter</router-link>
-           </li>
-           <li class="nav-item">
-             <router-link :to="{ name: 'contact'}" class="nav-link">Επικοινωνία</router-link>
            </li>
          </ul>
          <ul class="nav navbar-nav navbar-right social">

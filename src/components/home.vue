@@ -6,7 +6,7 @@
     <div v-if="error" class="row">
       <img src="http://placehold.it/1550x450" class="img-fluid">
       <h4 class="mt-5 mx-auto">
-        ο <router-link :to="{ name: 'contact'}">χώρος</router-link> περιμένει τη δική σου δράση
+        ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει τη δική σου δράση
       </h4>
     </div>
     <div class="card" style="width: 20rem;" v-for="event in events">
@@ -16,7 +16,11 @@
           <h4 class="card-title">{{ event.title }}</h4>
           <p class="card-text">
             <i class="fa fa-calendar-o" aria-hidden="true"></i>
-            <span class="date">{{ event.starts }}</span>
+            <span class="date">{{ event.starts | moment }}</span>
+            <span class="category" v-for="cat in event.category">
+              <i :class='"fa " + cat.icon_class' aria-hidden="true"></i>
+              <span class="category-name">{{ cat.name }}</span>
+            </span>
           </p>
         </div>
       </router-link>
@@ -26,6 +30,7 @@
 
 <script>
   import Api from '../api';
+  import moment from 'moment';
 
   export default {
     name: 'home',
@@ -46,6 +51,13 @@
         this.loading = false;
         this.error = true;
       });
+    },
+
+    filters: {
+      moment: function (date) {
+        moment.locale('el');
+        return moment(date).format('dddd, DD.MM HH:mm');
+      }
     }
   };
 </script>
