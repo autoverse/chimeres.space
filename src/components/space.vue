@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-5">
+    <div class="col-sm-5 hidden-xs-down">
       <img src="../assets/img/painting.jpg" alt="building" class="img-fluid">
     </div>
     <div class="col-sm-7 details">
@@ -14,7 +14,7 @@
       <div>
         <i class="fa fa-subway" aria-hidden="true"></i> <strong>Πρόσβαση</strong><br>
         Μεταξουργείο (κόκκινη γραμμή)<br>
-        Καραμεικός (μπλε γραμμή)</span>)
+        Καραμεικός (μπλε γραμμή)
       </div>
       <div>
         <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Επικοινωνία</strong><br>

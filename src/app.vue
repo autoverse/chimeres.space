@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <!--
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <div class="container">
        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,22 +10,12 @@
 
        <div class="collapse navbar-collapse" id="navbarMain">
          <ul class="navbar-nav mr-auto">
-           <!--
-           <li class="nav-item">
-             <router-link :to="{ name: 'schedule'}" class="nav-link">Πρόγραμμα</router-link>
-           </li>
-           -->
            <li class="nav-item">
              <router-link :to="{ name: 'space'}" class="nav-link">Χώρος</router-link>
            </li>
            <li class="nav-item">
              <router-link :to="{ name: 'newsletter'}" class="nav-link">Newsletter</router-link>
            </li>
-           <!--
-           <li class="nav-item">
-             <router-link :to="{ name: 'contact'}" class="nav-link">Επικοινωνία</router-link>
-           </li>
-           -->
          </ul>
          <ul class="nav navbar-nav navbar-right social">
            <li><a href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -34,7 +25,30 @@
          </ul>
        </div>
       </div>
-    </nav>
+  </nav>-->
+  <b-navbar toggleable type="light bg-faded">
+    <div class="container">
+      <b-nav-toggle target="nav_collapse"></b-nav-toggle>
+
+      <b-link class="navbar-brand" to="#">
+        <router-link :to="{ name: 'home'}" class="navbar-brand"><img src="./assets/img/chimeres_space.svg" alt="chimeres"></router-link>
+      </b-link>
+
+      <b-collapse is-nav id="nav_collapse">
+        <b-nav is-nav-bar>
+          <b-nav-item :to="{ name: 'space'}" class="nav-link">Χώρος</b-nav-item>
+          <b-nav-item :to="{ name: 'newsletter'}" class="nav-link">Newsletter</b-nav-item>
+        </b-nav>
+
+        <b-nav is-nav-bar class="ml-auto social hidden-xs-down">
+          <b-nav-item to="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
+          <b-nav-item to="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
+          <b-nav-item to="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
+          <b-nav-item to="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
+        </b-nav>
+      </b-collapse>
+    </div>
+  </b-navbar>
 
     <div class="content container">
       <transition name="fade">
@@ -51,7 +65,9 @@
 </script>
 
 <style lang="scss">
+
   @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+  @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
   @import '../node_modules/font-awesome/css/font-awesome.min.css';
   @import './app.scss';
 </style>
