@@ -4,7 +4,7 @@
       <div class="three-quarters" id="spinner-people">loading...</div>
     </div>
     <div v-if="error" class="row">
-      <img src="http://placehold.it/1550x450" class="img-fluid">
+      <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid">
       <h4 class="mt-5 mx-auto">
         ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει τη δική σου δράση
       </h4>
@@ -24,6 +24,12 @@
           </p>
         </div>
       </router-link>
+    </div>
+    <div v-if="events.length == 0" class="row">
+      <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
+      <h4 class="mt-5 mx-auto">
+        ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει τη δική σου δράση
+      </h4>
     </div>
   </div>
 </template>
