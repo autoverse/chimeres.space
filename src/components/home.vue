@@ -3,12 +3,6 @@
     <div v-if="loading" class="graph-spinner text-center">
       <div class="three-quarters" id="spinner-people">loading...</div>
     </div>
-    <div v-if="error" class="row">
-      <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid">
-      <h4 class="mt-5 mx-auto">
-        ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει τη δική σου δράση
-      </h4>
-    </div>
     <div class="card" style="width: 20rem;" v-for="event in events">
       <router-link :to='"/event/" + event.id + "/" + event.slug'>
         <div class="card-img" v-bind:style='{ backgroundImage: "url(" + event.image + ")", }'></div>
@@ -27,7 +21,7 @@
     </div>
     <div v-if="events.length == 0" class="row">
       <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
-      <h4 class="mt-5 mx-auto">
+      <h4 class="mt-4 mx-auto text-center">
         ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει τη δική σου δράση
       </h4>
     </div>
@@ -44,7 +38,6 @@
     data () {
       return {
         events: [],
-        error: false,
         loading: true
       }
     },
@@ -55,7 +48,6 @@
         this.events = response.data;
       }, error => {
         this.loading = false;
-        this.error = true;
       });
     },
 

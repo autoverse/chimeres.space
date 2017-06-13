@@ -10,7 +10,7 @@
       </div>
       <div class="col-sm-8">
         <h4>{{ event.title }}</h4>
-        <div v-html="event.description"></div>
+        <vue-markdown :source="event.description"></vue-markdown>
         <div>
           <i class="fa fa-calendar-o" aria-hidden="true"></i>
           <span class="date">{{ event.starts | moment }}</span>
@@ -31,6 +31,7 @@
 <script>
   import Api from '../api';
   import moment from 'moment';
+  import VueMarkdown from 'vue-markdown';
 
   export default {
     name: 'event',
@@ -41,6 +42,10 @@
         error: false,
         loading: true
       }
+    },
+
+    components: {
+      VueMarkdown
     },
 
     created () {
