@@ -1,54 +1,29 @@
 <template>
   <div id="app">
-      <!--
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <b-navbar toggleable type="light bg-faded">
       <div class="container">
-       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <router-link :to="{ name: 'home'}" class="navbar-brand"><img src="./assets/img/chimeres_space.svg" alt="chimeres"></router-link>
+        <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
-       <div class="collapse navbar-collapse" id="navbarMain">
-         <ul class="navbar-nav mr-auto">
-           <li class="nav-item">
-             <router-link :to="{ name: 'space'}" class="nav-link">Χώρος</router-link>
-           </li>
-           <li class="nav-item">
-             <router-link :to="{ name: 'newsletter'}" class="nav-link">Newsletter</router-link>
-           </li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right social">
-           <li><a href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-           <li><a href="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-           <li><a href="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-           <li><a href="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-         </ul>
-       </div>
+        <b-link class="navbar-brand" to="#">
+          <router-link :to="{ name: 'home'}" class="navbar-brand"><img src="./assets/img/chimeres_space.svg" alt="chimeres"></router-link>
+        </b-link>
+
+        <b-collapse is-nav id="nav_collapse">
+          <b-nav is-nav-bar>
+            <b-nav-item :to="{ name: 'home'}" exact class="m-2">Δράσεις</b-nav-item>
+            <b-nav-item :to="{ name: 'space'}" class="m-2">Χώρος</b-nav-item>
+            <b-nav-item :to="{ name: 'newsletter'}" class="m-2">Newsletter</b-nav-item>
+          </b-nav>
+
+          <b-nav is-nav-bar class="ml-auto social hidden-xs-down">
+            <b-nav-item to="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item to="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item to="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item to="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
+          </b-nav>
+        </b-collapse>
       </div>
-  </nav>-->
-  <b-navbar toggleable type="light bg-faded">
-    <div class="container">
-      <b-nav-toggle target="nav_collapse"></b-nav-toggle>
-
-      <b-link class="navbar-brand" to="#">
-        <router-link :to="{ name: 'home'}" class="navbar-brand"><img src="./assets/img/chimeres_space.svg" alt="chimeres"></router-link>
-      </b-link>
-
-      <b-collapse is-nav id="nav_collapse">
-        <b-nav is-nav-bar>
-          <b-nav-item :to="{ name: 'space'}" class="nav-link">Χώρος</b-nav-item>
-          <b-nav-item :to="{ name: 'newsletter'}" class="nav-link">Newsletter</b-nav-item>
-        </b-nav>
-
-        <b-nav is-nav-bar class="ml-auto social hidden-xs-down">
-          <b-nav-item to="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
-          <b-nav-item to="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
-          <b-nav-item to="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
-          <b-nav-item to="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
-        </b-nav>
-      </b-collapse>
-    </div>
-  </b-navbar>
+    </b-navbar>
 
     <div class="content container">
       <transition name="fade">

@@ -69,14 +69,17 @@ a {
     .navbar-nav {
         margin-left: 20px;
 
-        a.nav-link {
+        .nav-item {
             font-size: 1.1em;
-            border-bottom: 2px solid white;
 
-            &:hover,
-            .router-link-active {
-                color: black;
-                border-bottom: 2px solid $green;
+            .nav-link {
+                border-bottom: 2px solid white;
+
+                &:hover,
+                &.active {
+                    color: black;
+                    border-bottom: 2px solid $green;
+                }
             }
         }
     }

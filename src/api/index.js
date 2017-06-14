@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 export default class Api {
-    static getEvents() {
+    static getFutureEvents() {
         return axios.get('https://chimeres.info/api/space/future/?format=json');
+    }
+
+    static getPastEvents() {
+        return axios.get('https://chimeres.info/api/space/past/?format=json');
     }
 
     static getEvent(id) {
