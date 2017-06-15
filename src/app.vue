@@ -16,10 +16,10 @@
           </b-nav>
 
           <b-nav is-nav-bar class="ml-auto social hidden-xs-down">
-            <b-nav-item to="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
-            <b-nav-item to="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
-            <b-nav-item to="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
-            <b-nav-item to="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item href="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item href="https://www.youtube.com/user/chimeresgr/videos" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
+            <b-nav-item href="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
           </b-nav>
         </b-collapse>
       </div>
