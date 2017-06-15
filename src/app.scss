@@ -150,9 +150,23 @@ a {
                     height: 150px;
                 }
 
+                .card-block {
+                    padding: 10px;
+
+                    .card-title {
+                        font-size: 1.2em;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: #429983;
+                        font-weight: bold;
+                    }
+                }
+
                 .date {
                     display: inline-block;
                     margin-left: 5px;
+                    font-size: .9em;
                 }
 
                 .category {
@@ -162,6 +176,7 @@ a {
                     .category-name {
                         display: inline-block;
                         margin-left: 5px;
+                        font-size: .9em;
                     }
                 }
             }
