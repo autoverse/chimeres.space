@@ -19,13 +19,6 @@
         </div>
       </router-link>
     </div>
-    <div v-if="events.length == 0 && !loading" class="row">
-      <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
-      <h4 class="mt-4 mx-auto text-center">
-        ο <router-link :to="{ name: 'space'}">χώρος</router-link> περιμένει
-        τη δική σου <router-link :to="{ name: 'archive'}">δράση</router-link>
-      </h4>
-    </div>
   </div>
 </template>
 
@@ -44,7 +37,7 @@
     },
 
     created () {
-      Api.getFutureEvents().then(response => {
+      Api.getPastEvents().then(response => {
         this.loading = false;
         this.events = response.data;
       }, error => {
