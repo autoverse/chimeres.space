@@ -6,7 +6,7 @@
     </ol>
     <div class="row event">
       <div class="col-sm-4">
-        <img :src="event.image" :alt="event.title" class="img-fluid">
+        <img :src="event.image_url" :alt="event.title" class="img-fluid">
       </div>
       <div class="col-sm-8">
         <h4>{{ event.title }}</h4>
