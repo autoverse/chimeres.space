@@ -17,11 +17,15 @@
         </div>
         <div class="link" v-if="event.link">
           <i class="fa fa-link" aria-hidden="true"></i>
-          <a :href="event.link">περισσότερα</a>
+          <a :href="event.link" target="_blank">περισσότερα</a>
         </div>
         <div class="link" v-if="event.fb_link">
           <i class="fa fa-facebook-official" aria-hidden="true"></i>
-          <a :href="event.fb_link">fb event</a>
+          <a :href="event.fb_link" target="_blank">fb event</a>
+        </div>
+        <div class="link" v-if="event.imdb_link">
+          <i class="fa fa-imdb" aria-hidden="true"></i>
+          <a :href="event.imdb_link" target="_blank">imdb</a>
         </div>
       </div>
     </div>
