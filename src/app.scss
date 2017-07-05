@@ -32,7 +32,8 @@ $bggray: #f8f8f8;
 $green: #42b983;
 
 html,
-body {
+body,
+body > div {
     height: 100%;
     margin: 0;
 }
@@ -53,6 +54,17 @@ a {
     &:hover {
         text-decoration: none;
         color: black;
+    }
+}
+
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: -50px;
+
+    &:after {
+        content: '';
+        display: block;
+        height: 50px;
     }
 }
 
@@ -123,7 +135,7 @@ a {
     }
 
     .card-deck {
-        justify-content: center;
+        justify-content: left;
 
         .card {
             max-width: 310px;
@@ -227,6 +239,15 @@ a {
         width: 32px;
         height: 32px;
     }
+}
+
+footer {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: .9em;
+    color: $gray;
+    height: 50px;
 }
 
 @media all and (max-width: 575px) {

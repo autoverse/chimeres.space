@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div>
+  <div class="page-wrap">
     <b-navbar toggleable type="light bg-faded">
       <div class="container">
         <b-nav-toggle target="nav_collapse"></b-nav-toggle>
@@ -30,6 +31,13 @@
         <router-view></router-view>
       </transition>
     </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      η διαχείριση του χώρου γίνεται απ' την ομάδα <a href="" target="_blank">χίμαιρες</a>
+    </div>
+  </footer>
   </div>
 </template>
 
