@@ -35,7 +35,7 @@
 
   <footer>
     <div class="container">
-      η διαχείριση του χώρου γίνεται απ' την ομάδα <a href="" target="_blank">χίμαιρες</a>
+      η διαχείριση του χώρου γίνεται απ' την ομάδα <a href="http://chimeres.gr/" target="_blank">χίμαιρες</a>
     </div>
   </footer>
   </div>
