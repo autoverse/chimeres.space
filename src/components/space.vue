@@ -1,7 +1,24 @@
 <template>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="details ml-2">
+  <div>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>
+          Το chimeres.space φτιάχτηκε με σκοπό να φιλοξενήσει ιδέες και project ανθρώπων που ακόμα κυνηγάνε Χίμαιρες.
+          150 τετραγωνικά, στον 1ο όροφο ενός ανεξάρτητου κτιρίου, με ταράτσα ανάμεσα σε μπαλκόνια πολυκατοικιών,
+          σε έναν ήσυχο πεζόδρομο κάτω από τις γραμμές της Κωνσταντινουπόλεως.
+        </p>
+        <p>
+          Ο χώρος μπορεί να φιλοξενήσει προβολές, performances, installations, εκθέσεις, παραστάσεις, εργαστήρια,
+          μαθήματα, παρουσιάσεις, dj sets &amp; ακουστικά lives, συναντήσεις ή απλά χαλαρωτικές συναθροίσεις με μελέτη της
+          βιβλιοθήκης μας. Υπάρχει ακόμα η δυνατότητα να διατεθεί για πρόβες μετά από συνεννόηση.
+        </p>
+        <p>
+          Το chimeres.space είναι ένας χώρος ευμετάβλητος και δημιουργικός που φτιάχτηκε για όλους όσους θέλουν να κάνουν
+          απόπειρες και είναι ένας χώρος αυτοδιάθεσης και αυτοδιαχείρισης. Δεν ανήκει μόνο σε όσους δραστηριοποιούνται εντός
+          του αλλά και σε όλους όσους αναπνέουν μέσα του.
+        </p>
+      </div>
+      <div class="col-sm-4 text-right details">
         <div>
           <i class="fa fa-map-marker" aria-hidden="true"></i> <strong>Τοποθεσία</strong><br>
           <a href="http://www.openstreetmap.org/way/494771197" target="_blank">Πυθοδώρου 6</a><br>
@@ -20,8 +37,8 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-8 ">
-      <div class="mr-2 text-right">
+    <div class="row mt-3">
+      <div class="col-sm-12">
         <a data-flickr-embed="true" href="https://www.flickr.com/photos/chimeresgr/albums/72157682366017022" title="Chimeres.Space"><img src="https://c1.staticflickr.com/5/4276/35267129542_34bd001c0e_z.jpg" width="100%" height="427" alt="Chimeres.Space"></a>
       </div>
     </div>
