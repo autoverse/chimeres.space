@@ -27,7 +27,7 @@
         <div>
           <i class="fa fa-subway" aria-hidden="true"></i> <strong>Πρόσβαση</strong><br>
           Μεταξουργείο (κόκκινη γραμμή)<br>
-          Καραμεικός (μπλε γραμμή)
+          Κεραμεικός (μπλε γραμμή)
         </div>
         <div>
           <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Επικοινωνία</strong><br>
