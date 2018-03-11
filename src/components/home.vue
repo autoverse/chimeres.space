@@ -26,29 +26,6 @@
         τη δική σου <router-link :to="{ name: 'archive'}">δράση</router-link>
       </h4>
     </div>
-
-    <hr>
-
-    <div class="text-muted ml-3">
-      παλιότερες δράσεις
-    </div>
-
-    <div class="card-deck">
-      <router-link :to='"/event/" + archive.id + "/" + archive.slug' class="card" v-for="archive in archives" :key="archive.id">
-        <div class="card-img" v-bind:style='{ backgroundImage: "url(" + archive.image_url + ")", }'></div>
-        <div class="card-block">
-          <h4 class="card-title">{{ archive.title }}</h4>
-        </div>
-        <div class="card-footer">
-          <i class="fa fa-calendar-o" aria-hidden="true"></i>
-          <span class="date">{{ archive.starts | moment }}</span>
-          <span class="category" v-for="cat in archive.category">
-            <i :class='"fa " + cat.icon_class' aria-hidden="true"></i>
-            <span class="category-name">{{ cat.name }}</span>
-          </span>
-        </div>
-      </router-link>
-    </div>
   </div>
 </template>
 
@@ -71,24 +48,11 @@
       this.fetchFutureEvents();
     },
 
-    mounted () {
-        this.fetchPastEvents();
-    },
-
     methods: {
       fetchFutureEvents: function() {
         Api.getFutureEvents().then(response => {
           this.loading = false;
           this.events = response.data;
-        }, error => {
-          this.loading = false;
-        });
-      },
-
-      fetchPastEvents: function() {
-        Api.getPastEvents().then(response => {
-          this.loading = false;
-          this.archives = response.data;
         }, error => {
           this.loading = false;
         });

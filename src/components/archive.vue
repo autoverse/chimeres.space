@@ -1,24 +1,27 @@
 <template>
-  <div class="events-group">
+  <div>
+
     <div v-if="loading" class="graph-spinner text-center">
       <div class="three-quarters" id="spinner-people">loading...</div>
     </div>
-    <div class="card" style="width: 20rem;" v-for="event in events">
-      <router-link :to='"/event/" + event.id + "/" + event.slug'>
+
+    <div class="card-deck">
+      <router-link :to='"/event/" + events.id + "/" + events.slug' class="card" v-for="event in events" :key="event.id">
         <div class="card-img" v-bind:style='{ backgroundImage: "url(" + event.image_url + ")", }'></div>
         <div class="card-block">
           <h4 class="card-title">{{ event.title }}</h4>
-          <p class="card-text">
-            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-            <span class="date">{{ event.starts | moment }}</span>
-            <span class="category" v-for="cat in event.category">
-              <i :class='"fa " + cat.icon_class' aria-hidden="true"></i>
-              <span class="category-name">{{ cat.name }}</span>
-            </span>
-          </p>
+        </div>
+        <div class="card-footer">
+          <i class="fa fa-calendar-o" aria-hidden="true"></i>
+          <span class="date">{{ event.starts | moment }}</span>
+          <span class="category" v-for="cat in event.category">
+            <i :class='"fa " + cat.icon_class' aria-hidden="true"></i>
+            <span class="category-name">{{ cat.name }}</span>
+          </span>
         </div>
       </router-link>
     </div>
+
   </div>
 </template>
 

@@ -12,6 +12,7 @@
         <b-collapse is-nav id="nav_collapse">
           <b-nav is-nav-bar>
             <b-nav-item :to="{ name: 'home'}" exact class="m-2">Δράσεις</b-nav-item>
+            <b-nav-item :to="{ name: 'archive'}" class="m-2">Αρχείο</b-nav-item>
             <b-nav-item :to="{ name: 'space'}" class="m-2">Χώρος</b-nav-item>
             <b-nav-item :to="{ name: 'newsletter'}" class="m-2">Newsletter</b-nav-item>
           </b-nav>
