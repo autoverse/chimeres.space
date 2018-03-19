@@ -5,8 +5,8 @@ import Schedule from '../components/schedule.vue';
 import Archive from '../components/archive.vue';
 import Space from '../components/space.vue';
 import Newsletter from '../components/newsletter.vue';
-import Contact from '../components/contact.vue';
 import Event from '../components/event.vue';
+import Calendar from '../components/calendar.vue';
 import p404 from '../components/p404.vue';
 
 Vue.use(Router);
@@ -30,6 +30,11 @@ export default new Router({
             component: Schedule,
         },
         {
+            path: '/calendar',
+            name: 'calendar',
+            component: Calendar,
+        },
+        {
             path: '/space',
             name: 'space',
             component: Space,
@@ -38,11 +43,6 @@ export default new Router({
             path: '/newsletter',
             name: 'newsletter',
             component: Newsletter,
-        },
-        {
-            path: '/contact',
-            name: 'contact',
-            component: Contact,
         },
         {
             path: '/event/:id/:slug',

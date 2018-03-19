@@ -1,11 +1,16 @@
-image: node:9-alpine
+image: node:latest
 
 pages:
+  cache:
+    paths:
+    - node_modules/
+  stage: deploy
   script:
   - npm install
   - npm run build
-  - mkdir public
-  - cp -r index.html src/assets/img/opengraph.png dist public/
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
   artifacts:
     paths:
     - public/
