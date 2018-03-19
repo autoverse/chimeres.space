@@ -39,7 +39,6 @@
     data () {
       return {
         events: [],
-        archives: [],
         loading: true
       }
     },

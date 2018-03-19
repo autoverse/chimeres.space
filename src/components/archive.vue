@@ -6,7 +6,7 @@
     </div>
 
     <div class="card-deck">
-      <router-link :to='"/event/" + events.id + "/" + events.slug' class="card" v-for="event in events" :key="event.id">
+      <router-link :to='"/event/" + event.id + "/" + event.slug' class="card" v-for="event in events" :key="event.id">
         <div class="card-img" v-bind:style='{ backgroundImage: "url(" + event.image_url + ")", }'></div>
         <div class="card-block">
           <h4 class="card-title">{{ event.title }}</h4>
