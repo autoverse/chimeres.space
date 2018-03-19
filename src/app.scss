@@ -50,6 +50,7 @@ body {
 
 a {
     color: $green;
+    cursor: pointer;
 
     &:hover {
         text-decoration: none;
@@ -212,6 +213,17 @@ a {
             div {
                 margin-bottom: 20px;
             }
+        }
+    }
+
+    .metro {
+        @extend a;
+        border: none;
+        padding: 0;
+        background-color: inherit;
+
+        &:focus {
+            box-shadow: none;
         }
     }
 

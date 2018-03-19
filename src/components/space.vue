@@ -26,8 +26,8 @@
         </div>
         <div>
           <i class="fa fa-subway" aria-hidden="true"></i> <strong>Πρόσβαση</strong><br>
-          Μεταξουργείο (κόκκινη γραμμή)<br>
-          Κεραμεικός (μπλε γραμμή)
+          Μεταξουργείο <b-btn v-b-modal.modal2 class="metro">(κόκκινη γραμμή)</b-btn><br>
+          Κεραμεικός <b-btn v-b-modal.modal3 class="metro">(μπλε γραμμή)</b-btn>
         </div>
         <div>
           <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Επικοινωνία</strong><br>
@@ -40,6 +40,21 @@
         <a data-flickr-embed="true" href="https://www.flickr.com/photos/chimeresgr/albums/72157682366017022" title="Chimeres.Space"><img src="https://c1.staticflickr.com/5/4276/35267129542_34bd001c0e_z.jpg" width="100%" height="427" alt="Chimeres.Space"></a>
       </div>
     </div>
+
+    <!-- Modal 2 Component -->
+    <b-modal id="modal2" size="lg" title="κόκκινη γραμμή" ok-disabled="true">
+      <p class="my-4">
+        <img class="img-fluid mx-auto" src="../assets/img/metro2.jpg" alt="metro2">
+      </p>
+    </b-modal>
+
+    <!-- Modal 3 Component -->
+    <b-modal id="modal3" size="lg" title="μπλε γραμμή" ok-disabled="true">
+      <p class="my-4">
+        <img class="img-fluid mx-auto" src="../assets/img/metro3.jpg" alt="metro3">
+      </p>
+    </b-modal>
+
   </div>
 </template>
 
