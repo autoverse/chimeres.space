@@ -35,7 +35,17 @@
     data () {
       return {
         events: [],
+        inner: 'event',
         loading: true
+      }
+    },
+
+    head: {
+      title: function () {
+        return {
+          inner: this.inner,
+          separator: '|'
+        }
       }
     },
 
@@ -43,6 +53,8 @@
       Api.getPastEvents().then(response => {
         this.loading = false;
         this.events = response.data;
+        this.inner = this.event.title;
+        this.$emit('updateHead');
       }, error => {
         this.loading = false;
       });

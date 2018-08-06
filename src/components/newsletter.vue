@@ -27,5 +27,12 @@
 <script>
   export default {
     name: 'newsletter',
+
+    head: {
+      title: {
+        inner: 'newsletter',
+        separator: '|'
+      }
+    }
   };
 </script>

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '../components/home.vue';
-import Schedule from '../components/schedule.vue';
 import Archive from '../components/archive.vue';
 import Space from '../components/space.vue';
 import Newsletter from '../components/newsletter.vue';
@@ -23,11 +22,6 @@ export default new Router({
             path: '/archive',
             name: 'archive',
             component: Archive,
-        },
-        {
-            path: '/schedule',
-            name: 'schedule',
-            component: Schedule,
         },
         {
             path: '/calendar',

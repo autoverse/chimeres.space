@@ -14,11 +14,18 @@
 <script>
   export default {
     name: 'calendar',
+
+    head: {
+      title: {
+        inner: 'ημερολόγιο',
+        separator: '|'
+      }
+    }
   }
 </script>
 
 <style>
   .details div {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 </style>

@@ -13,6 +13,13 @@
 <script>
   export default {
     name: 'p404',
+
+    head: {
+      title: {
+        inner: '404',
+        separator: '|'
+      }
+    }
   };
 </script>
 

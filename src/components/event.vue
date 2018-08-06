@@ -43,6 +43,7 @@
     data () {
       return {
         event: [],
+        inner: 'event',
         error: false,
         loading: true
       }
@@ -52,10 +53,21 @@
       VueMarkdown
     },
 
+    head: {
+      title: function () {
+        return {
+          inner: this.inner,
+          separator: '|'
+        }
+      }
+    },
+
     created () {
       Api.getEvent(this.$route.params.id).then(response => {
         this.loading = false;
         this.event = response.data;
+        this.inner = this.event.title;
+        this.$emit('updateHead');
       }, error => {
         this.loading = false;
         this.error = true;
