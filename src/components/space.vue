@@ -2,19 +2,38 @@
   <div>
     <div class="row">
       <div class="col-sm-8">
-        <p>
-          Το chimeres.space φτιάχτηκε με σκοπό να φιλοξενήσει ιδέες και project ανθρώπων που ακόμα κυνηγάνε Χίμαιρες.
-          150 τετραγωνικά, στον 1ο όροφο ενός ανεξάρτητου κτιρίου, με ταράτσα ανάμεσα σε μπαλκόνια πολυκατοικιών,
-          σε έναν ήσυχο πεζόδρομο κάτω από τις γραμμές της Κωνσταντινουπόλεως.
-        </p>
-        <p>
-          Ο χώρος μπορεί να φιλοξενήσει προβολές, performances, installations, εκθέσεις, παραστάσεις, εργαστήρια,
-          μαθήματα, παρουσιάσεις, dj sets &amp; ακουστικά lives, συναντήσεις ή απλά χαλαρωτικές συναθροίσεις με μελέτη της
-          βιβλιοθήκης μας. Υπάρχει ακόμα η δυνατότητα να διατεθεί για πρόβες μετά από συνεννόηση.
-        </p>
-        <p>
-          Το chimeres.space είναι ένας χώρος ευμετάβλητος και δημιουργικός, ένας χώρος αυτοδιάθεσης και αυτοδιαχείρισης.
-        </p>
+        <b-tabs>
+          <b-tab title="GR" active>
+            <p>
+              Το chimeres.space φτιάχτηκε με σκοπό να φιλοξενήσει ιδέες και project ανθρώπων που ακόμα κυνηγάνε Χίμαιρες.
+              150 τετραγωνικά, στον 1ο όροφο ενός ανεξάρτητου κτιρίου, με ταράτσα ανάμεσα σε μπαλκόνια πολυκατοικιών,
+              σε έναν ήσυχο πεζόδρομο κάτω από τις γραμμές της Κωνσταντινουπόλεως.
+            </p>
+            <p>
+              Ο χώρος μπορεί να φιλοξενήσει προβολές, performances, installations, εκθέσεις, παραστάσεις, εργαστήρια,
+              μαθήματα, παρουσιάσεις, dj sets &amp; ακουστικά lives, συναντήσεις ή απλά χαλαρωτικές συναθροίσεις με μελέτη της
+              βιβλιοθήκης μας. Υπάρχει ακόμα η δυνατότητα να διατεθεί για πρόβες μετά από συνεννόηση.
+            </p>
+            <p>
+              Το chimeres.space είναι ένας χώρος ευμετάβλητος και δημιουργικός, ένας χώρος αυτοδιάθεσης και αυτοδιαχείρισης.
+            </p>
+          </b-tab>
+          <b-tab title="EN">
+            <p>
+              Chimeres.space was created to accommodate ideas and projects of people still chasing Chimeras.
+              150 square meters, on the first floor of an independent building, with a terrace between
+              blocks of flats, on a quiet pedestrian street below the lines of Konstantinoupoleos St.
+            </p>
+            <p>
+              The space can host screenings, performances, installations, exhibitions, theatrical plays,
+              workshops, lessons, presentations, dj-sets & acoustic lives, meetings or simply relaxing
+              gatherings by our library. There is still the possibility to accommodate rehearsals.
+            </p>
+            <p>
+              Chimeres.space is a space of change and creativity, a place of self-determination and self-management.
+            </p>
+          </b-tab>
+        </b-tabs>
       </div>
       <div class="col-sm-4 text-right details">
         <div>
@@ -75,5 +94,9 @@
 <style>
   .details div {
     margin-bottom: 20px;
+  }
+
+  .tab-content {
+    padding: 10px 0 0 5px;
   }
 </style>
