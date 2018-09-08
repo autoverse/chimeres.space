@@ -63,7 +63,8 @@
     filters: {
       moment: function (date) {
         moment.locale('el');
-        return moment(date).format('dddd, DD.MM HH:mm');
+        let m = moment(date);
+        return m.parseZone().format('dddd, DD.MM HH:mm');
       }
     }
   };
