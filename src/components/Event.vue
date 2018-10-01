@@ -4,6 +4,9 @@
       <li class="breadcrumb-item"><router-link :to="{ name: 'Home'}">Δράσεις</router-link></li>
       <li class="breadcrumb-item active">{{ event.title }}</li>
     </ol>
+    <div v-if="loading" class="graph-spinner text-center">
+      <div class="three-quarters" id="spinner-people">loading...</div>
+    </div>
     <div class="row item">
       <div class="col-sm-4">
         <img :src="event.image_url" :alt="event.title" class="img-fluid">
