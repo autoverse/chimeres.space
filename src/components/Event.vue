@@ -10,13 +10,9 @@
     <div class="row item">
       <div class="col-sm-4">
         <img :src="event.image_url" :alt="event.title" class="img-fluid">
-      </div>
-      <div class="col-sm-8">
-        <h4>{{ event.title }}</h4>
-        <vue-markdown :source="event.description"></vue-markdown>
         <div>
           <i class="fa fa-calendar-o" aria-hidden="true"></i>
-          <span class="date">{{ event.starts | moment }}</span>
+          {{ event.starts | moment }}
         </div>
         <div class="link" v-if="event.link">
           <i class="fa fa-link" aria-hidden="true"></i>
@@ -30,6 +26,17 @@
           <i class="fa fa-imdb" aria-hidden="true"></i>
           <a :href="event.imdb_link" target="_blank">imdb</a>
         </div>
+      </div>
+      <div class="col-sm-8">
+        <h4>{{ event.title }}</h4>
+        <div v-if="recordings.length > 0">
+          <h6><i class="fa fa-microphone" aria-hidden="true"></i> ηχογραφήσεις</h6>
+          <div v-for="rec in recordings" :key="rec.key">
+            <div v-html="rec.embed_code" class="rec"></div>
+            <hr>
+          </div>
+        </div>
+        <vue-markdown :source="event.description"></vue-markdown>
       </div>
     </div>
   </div>
@@ -48,7 +55,8 @@ export default {
       event: [],
       inner: 'event',
       error: false,
-      loading: true
+      loading: true,
+      recordings: []
     };
   },
 
@@ -71,6 +79,12 @@ export default {
       this.event = response.data;
       this.inner = this.event.title;
       this.$emit('updateHead');
+      Api.getEventRecordings(this.$route.params.id).then(response => {
+        this.recordings = response.data;
+      // eslint-disable-next-line
+      }, error => {
+        this.recordings = false;
+      });
     // eslint-disable-next-line
     }, error => {
       this.loading = false;
@@ -82,7 +96,7 @@ export default {
     moment: function (date) {
       moment.locale('el');
       let m = moment(date);
-      return m.parseZone().format('dddd, DD.MM HH:mm');
+      return m.parseZone().format('dddd HH:mm, DD.MM.YYYY');
     }
   }
 };
@@ -97,9 +111,13 @@ export default {
   div {
     margin-top: 20px;
 
-    .date {
-      margin-left: 5px;
+    .fa {
+      margin-right: 5px;
     }
+  }
+
+  .rec {
+    margin-bottom: 8px;
   }
 }
 </style>
