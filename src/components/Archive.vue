@@ -22,12 +22,18 @@
       </router-link>
     </div>
 
+    <div v-if="moreEvents" class="text-center mt-4">
+      <button class="btn btn-primary" @click="loadmore">περισσότερες δράσεις...</button>
+    </div>
+
   </div>
 </template>
 
 <script>
 import Api from '../api';
 import moment from 'moment';
+
+const PAGE_SIZE = 24;
 
 export default {
   name: 'Archive',
@@ -36,29 +42,46 @@ export default {
     return {
       events: [],
       inner: 'event',
-      loading: true
+      loading: true,
+      total: 0,
+      psize: PAGE_SIZE,
+      offset: 0
     };
   },
 
   head: {
-    title: function () {
-      return {
-        inner: this.inner,
-        separator: '|'
-      };
+    title: {
+      inner: 'χώρος',
+      separator: '|'
     }
   },
 
   created () {
-    Api.getPastEvents().then(response => {
+    Api.getPastEvents(this.offset).then(response => {
       this.loading = false;
-      this.events = response.data;
-      this.inner = this.event.title;
+      this.events = response.data.results;
+      this.total = response.data.count;
       this.$emit('updateHead');
+      this.offset += this.events.length;
     // eslint-disable-next-line
     }, error => {
       this.loading = false;
     });
+  },
+
+  computed: {
+    moreEvents () {
+      return this.events.length < this.total;
+    }
+  },
+
+  methods: {
+    loadmore: function () {
+      Api.getPastEvents(this.offset).then(response => {
+        this.events = this.events.concat(response.data.results);
+        this.offset += this.events.length;
+      });
+    }
   },
 
   filters: {

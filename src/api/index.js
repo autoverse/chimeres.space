@@ -5,8 +5,8 @@ export default class Api {
     return axios.get('https://chimeres.info/api/space/future/?format=json');
   }
 
-  static getPastEvents() {
-    return axios.get('https://chimeres.info/api/space/past/?format=json');
+  static getPastEvents(offset) {
+    return axios.get('https://chimeres.info/api/space/past/?format=json&offset=' + offset);
   }
 
   static getEvent(id) {
