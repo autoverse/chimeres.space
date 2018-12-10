@@ -30,7 +30,7 @@
       <div class="col-sm-8">
         <h4>{{ event.title }}</h4>
         <div v-if="recordings.length > 0">
-          <h6><i class="fa fa-microphone" aria-hidden="true"></i> ηχογραφήσεις</h6>
+          <h6><i class="fa fa-microphone" aria-hidden="true"></i> recordings</h6>
           <div v-for="rec in recordings" :key="rec.key">
             <div v-html="rec.embed_code" class="rec"></div>
             <hr>
