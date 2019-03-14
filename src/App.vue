@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="page-wrap">
-      <b-navbar toggleable type="light bg-faded">
+      <b-navbar toggleable="lg" type="light bg-faded">
         <div class="container">
           <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
@@ -18,7 +18,7 @@
               <b-nav-item :to="{ name: 'Newsletter'}" class="m-2">Newsletter</b-nav-item>
             </b-nav>
 
-            <b-nav is-nav-bar class="ml-auto social hidden-xs-down">
+            <b-nav is-nav-bar class="ml-2 ml-md-auto flex-row social hidden-xs-down">
               <b-nav-item href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.youtube.com/c/chimeres/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
