@@ -10,21 +10,22 @@
           </b-link>
 
           <b-collapse is-nav id="nav_collapse">
-            <b-nav is-nav-bar>
+            <b-navbar-nav>
               <b-nav-item :to="{ name: 'Home'}" exact class="m-2">Δράσεις</b-nav-item>
               <b-nav-item :to="{ name: 'Calendar'}" class="m-2">Ημερολόγιο</b-nav-item>
+              <b-nav-item :to="{ name: 'Library'}" class="m-2">Βιβλιοθήκη</b-nav-item>
               <b-nav-item :to="{ name: 'Archive'}" class="m-2">Αρχείο</b-nav-item>
               <b-nav-item :to="{ name: 'Space'}" class="m-2">Χώρος</b-nav-item>
               <b-nav-item :to="{ name: 'Newsletter'}" class="m-2">Newsletter</b-nav-item>
-            </b-nav>
+            </b-navbar-nav>
 
-            <b-nav is-nav-bar class="ml-2 ml-md-auto flex-row social hidden-xs-down">
+            <b-navbar-nav class="ml-lg-auto flex-row social d-lg-none">
               <b-nav-item href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.youtube.com/c/chimeres/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.mixcloud.com/chimeresgreece/" target="_blank"><i class="fa fa-mixcloud" aria-hidden="true"></i></b-nav-item>
               <b-nav-item href="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></b-nav-item>
-            </b-nav>
+            </b-navbar-nav>
           </b-collapse>
         </div>
       </b-navbar>
@@ -39,6 +40,14 @@
     <footer>
       <div class="container">
         η διαχείριση του χώρου γίνεται απ' την ομάδα <a href="http://chimeres.gr/" target="_blank">χίμαιρες</a>
+        <span class="d-none d-lg-inline-block mx-2">&bull;</span>
+        <ul class="social social-footer d-none d-lg-inline-block">
+          <li><a href="https://twitter.com/chimeres/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.facebook.com/chimeres.space/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/c/chimeres/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.mixcloud.com/chimeresgreece/" target="_blank"><i class="fa fa-mixcloud" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.flickr.com/chimeresgr" target="_blank"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+        </ul>
       </div>
     </footer>
   </div>

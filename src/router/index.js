@@ -6,6 +6,7 @@ import Space from '../components/Space.vue';
 import Newsletter from '../components/Newsletter.vue';
 import Event from '../components/Event.vue';
 import Calendar from '../components/Calendar.vue';
+import Library from '../components/Library.vue';
 import P404 from '../components/P404.vue';
 
 Vue.use(Router);
@@ -21,6 +22,11 @@ export default new Router({
       path: '/archive',
       name: 'Archive',
       component: Archive
+    },
+    {
+      path: '/library',
+      name: 'Library',
+      component: Library
     },
     {
       path: '/calendar',
