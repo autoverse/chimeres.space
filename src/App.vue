@@ -13,7 +13,6 @@
             <b-navbar-nav>
               <b-nav-item :to="{ name: 'Home'}" exact class="m-2">Δράσεις</b-nav-item>
               <b-nav-item :to="{ name: 'Calendar'}" class="m-2">Ημερολόγιο</b-nav-item>
-              <b-nav-item :to="{ name: 'Library'}" class="m-2">Βιβλιοθήκη</b-nav-item>
               <b-nav-item :to="{ name: 'Archive'}" class="m-2">Αρχείο</b-nav-item>
               <b-nav-item :to="{ name: 'Space'}" class="m-2">Χώρος</b-nav-item>
               <b-nav-item :to="{ name: 'Newsletter'}" class="m-2">Newsletter</b-nav-item>
