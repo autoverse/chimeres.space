@@ -88,7 +88,7 @@ export default {
     moment: function (date) {
       moment.locale('el');
       let m = moment(date);
-      return m.parseZone().format('dddd, DD.MM HH:mm');
+      return m.parseZone().format('dddd, DD.MM.YYYY');
     }
   }
 };
