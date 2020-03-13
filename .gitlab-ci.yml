@@ -9,6 +9,7 @@ pages:
   - npm install
   - npm run build
   - mv dist public
+  - cp -r static public
 
   artifacts:
     paths:
