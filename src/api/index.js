@@ -17,6 +17,10 @@ export default class Api {
     return axios.get('https://chimeres.info/api/space/recordings/?event=' + id + '&format=json');
   }
 
+  static getRecordings() {
+    return axios.get('https://chimeres.info/api/space/recordings/?format=json');
+  }
+
   static getLibraryItems() {
     return axios.get('http://localhost:8000/api/library/items/?format=json');
   }

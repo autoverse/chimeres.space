@@ -20,11 +20,16 @@
       </router-link>
     </div>
     <div v-if="events.length == 0 && !loading" class="row">
-      <img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
+      <!--<img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
       <h4 class="mt-4 mx-auto text-center">
         ο <router-link :to="{ name: 'Space'}">χώρος</router-link> περιμένει
         τη δική σου <router-link :to="{ name: 'Archive'}">δράση</router-link>
+      </h4>-->
+      <h4 class="d-block w-100 mt-1 mb-5 mx-auto text-center">
+        Don't Panic και άκου μια live ηχογράφηση 🎼
       </h4>
+      <br>
+      <div class="w-100" v-html="recording.embed_code"></div>
     </div>
   </div>
 </template>
@@ -39,6 +44,8 @@ export default {
   data () {
     return {
       events: [],
+      recordings: [],
+      recording: null,
       loading: true
     };
   },
@@ -51,7 +58,16 @@ export default {
     fetchFutureEvents: function() {
       Api.getFutureEvents().then(response => {
         this.loading = false;
-        this.events = response.data;
+        this.events = ''; // response.data;
+        if (this.events.length === 0) {
+          Api.getRecordings().then(response => {
+            this.recordings = response.data;
+            this.recording = this.recordings[Math.floor((Math.random() * this.recordings.length) + 1)];
+          // eslint-disable-next-line
+          }, error => {
+            this.recordings = false;
+          });
+        }
       // eslint-disable-next-line
       }, error => {
         this.loading = false;
