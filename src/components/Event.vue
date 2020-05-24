@@ -23,8 +23,8 @@
           <a :href="event.fb_link" target="_blank">fb event</a>
         </div>
         <div class="link" v-if="event.imdb_link">
-          <i class="fa fa-imdb" aria-hidden="true"></i>
-          <a :href="event.imdb_link" target="_blank">imdb</a>
+          <i class="fa fa-video-camera" aria-hidden="true"></i>
+          <a :href="event.imdb_link" target="_blank">moviedb</a>
         </div>
       </div>
       <div class="col-sm-8">
