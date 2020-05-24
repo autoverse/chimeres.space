@@ -20,11 +20,6 @@
       </router-link>
     </div>
     <div v-if="events.length == 0 && !loading" class="row">
-      <!--<img src="../assets/img/space.jpg" alt="chimeres" class="img-fluid mx-auto">
-      <h4 class="mt-4 mx-auto text-center">
-        ο <router-link :to="{ name: 'Space'}">χώρος</router-link> περιμένει
-        τη δική σου <router-link :to="{ name: 'Archive'}">δράση</router-link>
-      </h4>-->
       <h4 class="d-block w-100 mt-1 mb-5 mx-auto text-center">
         Don't Panic και άκου μια live ηχογράφηση 🎼
       </h4>
@@ -58,7 +53,7 @@ export default {
     fetchFutureEvents: function() {
       Api.getFutureEvents().then(response => {
         this.loading = false;
-        this.events = ''; // response.data;
+        this.events = response.data;
         if (this.events.length === 0) {
           Api.getRecordings().then(response => {
             this.recordings = response.data;
