@@ -32,12 +32,12 @@ a {
 
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -50px;
+  margin-bottom: -70px;
 
   &:after {
     content: '';
     display: block;
-    height: 50px;
+    height: 70px;
   }
 }
 
@@ -219,7 +219,7 @@ footer {
   text-align: center;
   font-size: .9em;
   color: $gray;
-  height: 50px;
+  height: 70px;
 }
 
 @media all and (min-width: 1200px) {
