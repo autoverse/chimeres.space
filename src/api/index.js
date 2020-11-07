@@ -1,27 +1,38 @@
 import axios from 'axios';
 
+// const API_URL = 'http://localhost:8000/api/';
+const API_URL = 'https://chimeres.info/api/';
+
 export default class Api {
   static getFutureEvents() {
-    return axios.get('https://chimeres.info/api/space/future/?format=json');
+    return axios.get(API_URL + 'space/future/?format=json');
   }
 
   static getPastEvents(offset) {
-    return axios.get('https://chimeres.info/api/space/past/?format=json&offset=' + offset);
+    return axios.get(API_URL + 'space/past/?format=json&offset=' + offset);
   }
 
   static getEvent(id) {
-    return axios.get('https://chimeres.info/api/space/events/' + id + '/?format=json');
+    return axios.get(API_URL + 'space/events/' + id + '/?format=json');
   }
 
   static getEventRecordings(id) {
-    return axios.get('https://chimeres.info/api/space/recordings/?event=' + id + '&format=json');
+    return axios.get(API_URL + 'space/recordings/?event=' + id + '&format=json');
   }
 
   static getRecordings() {
-    return axios.get('https://chimeres.info/api/space/recordings/?format=json');
+    return axios.get(API_URL + 'space/recordings/?format=json');
   }
 
   static getLibraryItems() {
-    return axios.get('http://localhost:8000/api/library/items/?format=json');
+    return axios.get(API_URL + 'library/items/?format=json');
+  }
+
+  static getDistroCategories() {
+    return axios.get(API_URL + 'distro/categories/?format=json');
+  }
+
+  static getDistroItems(lettercode) {
+    return axios.get(API_URL + 'distro/items/?category__letter_code=' + lettercode + '&format=json');
   }
 }
