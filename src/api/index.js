@@ -24,10 +24,6 @@ export default class Api {
     return axios.get(API_URL + 'space/recordings/?format=json');
   }
 
-  static getLibraryItems() {
-    return axios.get(API_URL + 'library/items/?format=json');
-  }
-
   static getDistroCategories() {
     return axios.get(API_URL + 'distro/categories/?format=json');
   }
