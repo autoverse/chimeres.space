@@ -5,7 +5,7 @@
     </div>
 
     <div class="card-deck">
-      <router-link :to='"/distro/" + category.letter_code' class="card" v-for="category in categories" :key="category.slug">
+      <router-link :to='"/distro/" + category.letter_code' class="card" v-for="category in categories" :key="category.letter_code">
         <div class="card-block">
           <img class="card-img" :src="category.image_url" :alt="category.name">
         </div>

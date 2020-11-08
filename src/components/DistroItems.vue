@@ -10,17 +10,20 @@
     </div>
 
     <div class="card-deck">
-      <div class="card" v-for="item in items" :key="item.slug">
+      <div class="card" v-for="item in items" :key="item.code">
         <div @click='lightbox("img-" + item.code)'>
           <img :src="item.image_url" class="card-img-top" :alt="item.title">
         </div>
         <div class="card-block">
-          <div class="title">{{ item.title }}</div>
           <vue-markdown class="description" :source="item.description"></vue-markdown>
+          <div class="link" v-if="item.link">
+            <a :href="item.link" target="_blank">{{ item.link | subStr }}</a>
+          </div>
         </div>
         <div class="price">
           <i class="fa fa-euro" aria-hidden="true"></i>
-          {{ item.price }}
+          <span v-if="item.price > 0">{{ item.price }}</span>
+          <span v-if="item.price == 0">donation</span>
         </div>
         <div class="card-footer">
           <input type="text" disabled :value="item.code" size="5" :id="item.code">
@@ -81,6 +84,12 @@ export default {
     lightclose: function(img) {
       const el = document.getElementById(img);
       el.classList.remove('table');
+    }
+  },
+
+  filters: {
+    subStr: function(string) {
+      return string.substring(0, 30) + '...';
     }
   }
 };
