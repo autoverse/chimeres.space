@@ -1,5 +1,7 @@
 <template>
   <div class="distro">
+    <DistroIntro />
+
     <div v-if="loading" class="graph-spinner text-center">
       <div class="three-quarters" id="spinner-people">loading...</div>
     </div>
@@ -17,6 +19,7 @@
 
 <script>
 import Api from '../api';
+import DistroIntro from './DistroIntro';
 
 export default {
   name: 'Distro',
@@ -26,6 +29,10 @@ export default {
       categories: [],
       loading: true
     };
+  },
+
+  components: {
+    DistroIntro
   },
 
   created () {
@@ -58,6 +65,9 @@ export default {
       height: auto;
       max-width: 200px;
       min-width: 200px;
+      border-bottom: 1px solid rgba(0, 0, 0, .125);
+      min-height: 242px;
+      padding: 4px;
 
       .card-img {
         display: block;

@@ -1,12 +1,22 @@
 <template>
   <div class="distro">
-    <ol class="breadcrumb">
+
+    <ol class="breadcrumb" v-if="!loading">
       <li class="breadcrumb-item"><router-link :to="{ name: 'Distro'}">Distro</router-link></li>
-      <li class="breadcrumb-item active">{{ items[0].category.name }}</li>
+      <li class="breadcrumb-item active" v-if="items.length > 0">{{ items[0].category.name }}</li>
     </ol>
+
+    <DistroIntro />
 
     <div v-if="loading" class="graph-spinner text-center">
       <div class="three-quarters" id="spinner-people">loading...</div>
+    </div>
+
+    <div class="row" v-if="items.length == 0 && !loading">
+      <h5 class="d-block w-100 mt-3 mx-auto text-center">
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+        Δεν υπάρχουν ακόμα αντικείμενα σε αυτή την κατηγορία!
+      </h5>
     </div>
 
     <div class="card-deck">
@@ -42,6 +52,7 @@
 <script>
 import Api from '../api';
 import VueMarkdown from 'vue-markdown';
+import DistroIntro from './DistroIntro';
 
 export default {
   name: 'Distro',
@@ -54,7 +65,8 @@ export default {
   },
 
   components: {
-    VueMarkdown
+    VueMarkdown,
+    DistroIntro
   },
 
   created () {
