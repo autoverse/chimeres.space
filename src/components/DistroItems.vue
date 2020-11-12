@@ -25,9 +25,9 @@
           <img :src="item.image_url" class="card-img-top" :alt="item.title">
         </div>
         <div class="card-block">
-          <vue-markdown class="description" :source="item.description"></vue-markdown>
+          <vue-markdown class="description" :source="item.description | subDesc"></vue-markdown>
           <div class="link" v-if="item.link">
-            <a :href="item.link" target="_blank">{{ item.link | subStr }}</a>
+            <a :href="item.link" target="_blank">{{ item.link | subLink }}</a>
           </div>
         </div>
         <div class="price">
@@ -43,6 +43,7 @@
         <div class="lightbox" :id='"img-" + item.code'>
           <img :src="item.image_url" :alt="item.title">
           <i class="fa fa-times close" aria-hidden="true" @click='lightclose("img-" + item.code)'></i>
+          <vue-markdown class="light-description" :source="item.description"></vue-markdown>
         </div>
       </div>
     </div>
@@ -100,8 +101,11 @@ export default {
   },
 
   filters: {
-    subStr: function(string) {
+    subLink: function(string) {
       return string.substring(0, 30) + '...';
+    },
+    subDesc: function(string) {
+      return string.substring(0, 100) + '...';
     }
   }
 };
@@ -130,8 +134,8 @@ export default {
       }
 
       .card-img-top {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
         object-fit: cover;
         cursor: pointer;
 
@@ -146,6 +150,10 @@ export default {
       }
 
       .card-block {
+        > div:last-child {
+          margin-bottom: 40px;
+        }
+
         .title {
           font-weight: bold;
         }
@@ -197,7 +205,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(58, 58, 58, 0.6);
+      background-color: rgba(58, 58, 58, 0.9);
       display: none;
       transition: opacity .5s ease;
 
@@ -221,6 +229,25 @@ export default {
         opacity: 1;
         font-weight: bold;
         cursor: pointer;
+      }
+
+      .light-description {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        color: black;
+        width: 300px;
+        max-width: 100%;
+        text-align: left;
+        padding: 15px;
+        border-radius: 0 0 5px 5px;
+
+        @media all and (max-width: 575px) {
+          width: 100%;
+          padding: 5px;
+          font-size: 0.8rem;
+        }
       }
     }
   }
