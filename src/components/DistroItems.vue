@@ -26,11 +26,13 @@
         </div>
         <div class="card-block">
           <vue-markdown class="description" :source="item.description | subDesc"></vue-markdown>
-          <div class="desc-more" v-if="item.description.length > 100">
-            [<a class="desc-link" @click='lightbox("desc-" + item.code)'>περισσότερα</a>]
+          <div class="desc-more d-inline pr-3" v-if="item.description.length > 100">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <a class="desc-link" @click='lightbox("desc-" + item.code)'>περισσότερα</a>
           </div>
-          <div class="link" v-if="item.link">
-            <a class="card-link" :href="item.link" target="_blank">{{ item.link | subLink }}</a>
+          <div class="link d-inline" v-if="item.link">
+            <i class="fa fa-external-link-square" aria-hidden="true"></i>
+            <a class="card-link" :href="item.link" target="_blank">link</a>
           </div>
         </div>
         <div class="price">
@@ -109,7 +111,7 @@ export default {
 
   filters: {
     subLink: function(string) {
-      return string.substring(0, 30) + '...';
+      return string.substring(0, 32) + '...';
     },
     subDesc: function(string) {
       const clamp = '...';
@@ -172,20 +174,23 @@ export default {
 
         .description {
           padding-top: 5px;
-
-          p {
-            margin-bottom: 0;
-          }
         }
 
         .desc-more {
+          font-size: 0.9rem;
+
           .desc-link {
             color: #42b983;
+
+            &:hover {
+              color: black;
+            }
           }
         }
 
         .link {
           margin-top: 5px;
+          font-size: 0.9rem;
         }
 
         .code {
