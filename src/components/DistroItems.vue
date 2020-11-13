@@ -26,8 +26,11 @@
         </div>
         <div class="card-block">
           <vue-markdown class="description" :source="item.description | subDesc"></vue-markdown>
+          <div class="desc-more" v-if="item.description.length > 100">
+            [<a class="desc-link" @click='lightbox("desc-" + item.code)'>περισσότερα</a>]
+          </div>
           <div class="link" v-if="item.link">
-            <a :href="item.link" target="_blank">{{ item.link | subLink }}</a>
+            <a class="card-link" :href="item.link" target="_blank">{{ item.link | subLink }}</a>
           </div>
         </div>
         <div class="price">
@@ -41,8 +44,12 @@
         </div>
 
         <div class="lightbox" :id='"img-" + item.code'>
-          <img :src="item.image_url" :alt="item.title">
           <i class="fa fa-times close" aria-hidden="true" @click='lightclose("img-" + item.code)'></i>
+          <img :src="item.image_url" :alt="item.title">
+        </div>
+
+        <div class="lightbox" :id='"desc-" + item.code' @click='lightclose("desc-" + item.code)'>
+          <i class="fa fa-times close" aria-hidden="true" @click='lightclose("desc-" + item.code)'></i>
           <vue-markdown class="light-description" :source="item.description"></vue-markdown>
         </div>
       </div>
@@ -105,7 +112,12 @@ export default {
       return string.substring(0, 30) + '...';
     },
     subDesc: function(string) {
-      return string.substring(0, 100) + '...';
+      const clamp = '...';
+      const length = 100;
+      var node = document.createElement('div');
+      node.innerHTML = string;
+      var content = node.textContent;
+      return content.length > length ? content.slice(0, length) + clamp : content;
     }
   }
 };
@@ -164,6 +176,16 @@ export default {
           p {
             margin-bottom: 0;
           }
+        }
+
+        .desc-more {
+          .desc-link {
+            color: #42b983;
+          }
+        }
+
+        .link {
+          margin-top: 5px;
         }
 
         .code {
@@ -233,15 +255,16 @@ export default {
 
       .light-description {
         position: absolute;
-        bottom: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         background-color: white;
         color: black;
-        width: 300px;
+        width: 600px;
         max-width: 100%;
         text-align: left;
         padding: 15px;
-        border-radius: 0 0 5px 5px;
+        border-radius: 5px;
 
         @media all and (max-width: 575px) {
           width: 100%;
