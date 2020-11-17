@@ -30,10 +30,6 @@
             <i class="fa fa-info-circle" aria-hidden="true"></i>
             <a class="desc-link" @click='lightbox("desc-" + item.code)'>περισσότερα</a>
           </div>
-          <div class="link d-inline" v-if="item.link">
-            <i class="fa fa-external-link-square" aria-hidden="true"></i>
-            <a class="card-link" :href="item.link" target="_blank">link</a>
-          </div>
         </div>
         <div class="price">
           <i class="fa fa-euro" aria-hidden="true"></i>
@@ -52,7 +48,13 @@
 
         <div class="lightbox" :id='"desc-" + item.code' @click='lightclose("desc-" + item.code)'>
           <i class="fa fa-times close" aria-hidden="true" @click='lightclose("desc-" + item.code)'></i>
-          <vue-markdown class="light-description" :source="item.description"></vue-markdown>
+          <div class="light-description">
+            <vue-markdown :source="item.description"></vue-markdown>
+            <p>
+              <i class="fa fa-external-link-square" aria-hidden="true"></i>
+              <a class="card-link" :href="item.link" target="_blank">{{ item.link }}</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -256,6 +258,7 @@ export default {
         opacity: 1;
         font-weight: bold;
         cursor: pointer;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
       }
 
       .light-description {
